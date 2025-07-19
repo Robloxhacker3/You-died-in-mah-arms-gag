@@ -1,0 +1,212 @@
+:root {
+  --bg-light: linear-gradient(145deg, #e8f5e9, #c8e6c9);
+  --bg-dark: #121212;
+  --primary: #4caf50;
+  --card-light: #ffffffee;
+  --card-dark: #1a1a1a;
+  --text-light: #2e7d32;
+  --text-dark: #eeeeee;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #a5d6a7;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: var(--text-light);
+}
+
+body.dark header h1 {
+  color: var(--text-dark);
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.3s;
+}
+
+body.dark nav button {
+  color: var(--text-dark);
+}
+
+main {
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tab-section {
+  display: none;
+}
+
+.tab-section.active {
+  display: block;
+}
+
+#trade-list, #admin-trade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.trade-card {
+  background: var(--card-light);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-light);
+}
+
+body.dark .trade-card {
+  background: var(--card-dark);
+  color: var(--text-dark);
+}
+
+.trade-card:hover {
+  transform: translateY(-3px);
+}
+
+.trade-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.trade-details h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.trade-actions button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.trade-actions button:hover {
+  background: #388e3c;
+}
+
+#post-form label {
+  font-weight: bold;
+}
+
+#post-form input,
+#post-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+#post-form button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#post-form button:hover {
+  background: #388e3c;
+}
+
+#admin-controls h3 {
+  margin-top: 0;
+}
+
+#admin-login-form label {
+  font-weight: bold;
+}
+
+#admin-login-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+#admin-login-form button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#dark-mode-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px var(--primary);
+  transition: background 0.3s;
+}
+
+#dark-mode-toggle:hover {
+  background: #388e3c;
+}
