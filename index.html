@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GAGnex.gg - Real-Time Trading</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1><i data-lucide="handshake"></i> GAGnex.gg</h1>
+    <nav>
+      <button onclick="switchTab('home')"><i data-lucide="home"></i> Home</button>
+      <button onclick="switchTab('trades')"><i data-lucide="repeat"></i> Trades</button>
+      <button onclick="switchTab('post')"><i data-lucide="plus-circle"></i> Post</button>
+      <button onclick="switchTab('admin')"><i data-lucide="shield"></i> Admin</button>
+      <button onclick="switchTab('middleman')"><i data-lucide="user-check"></i> Middleman</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="tab-section active">
+      <h2>Welcome to GAGnex.gg</h2>
+      <p>Trade pets securely, find middlemen, and grow trust in your community 🌱</p>
+    </section>
+
+    <section id="trades" class="tab-section">
+      <h2>Active Trades</h2>
+      <div id="trade-list"></div>
+    </section>
+
+    <section id="post" class="tab-section">
+      <h2>Post a New Trade</h2>
+      <form id="post-form">
+        <label>Trade Title</label><br/>
+        <input type="text" id="title" placeholder="e.g. Trading T-Rex" required /><br/>
+        <label>What are you offering?</label><br/>
+        <textarea id="offering" placeholder="Your offer details" required></textarea><br/>
+        <label>What do you want?</label><br/>
+        <textarea id="wanting" placeholder="What you want in return" required></textarea><br/>
+        <label>Your Roblox Username</label><br/>
+        <input type="text" id="username" placeholder="Your Roblox username" required /><br/>
+        <button type="submit">Post Trade</button>
+      </form>
+    </section>
+
+    <section id="admin" class="tab-section">
+      <h2>Admin Login</h2>
+      <p>Only admins can manage trades here (fake login for demo).</p>
+      <form id="admin-login-form">
+        <label>Admin Password</label><br/>
+        <input type="password" id="admin-password" required /><br/>
+        <button type="submit">Login</button>
+      </form>
+      <div id="admin-controls" style="display:none;">
+        <h3>Manage Trades</h3>
+        <div id="admin-trade-list"></div>
+      </div>
+    </section>
+
+    <section id="middleman" class="tab-section">
+      <h2>Middleman Portal</h2>
+      <p>Manage trust and verify trades here (coming soon!).</p>
+    </section>
+  </main>
+
+  <button id="dark-mode-toggle" title="Toggle Dark Mode">🌙</button>
+
+  <script src="scripts.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
